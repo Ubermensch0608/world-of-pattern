@@ -1,0 +1,28 @@
+.gnb__header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  height: 64px;
+}
+
+.gnb__header-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.header__nav-link {
+  color: black;
+  padding: 8px 12px;
+}
+
+.header__nav-link.active {
+  color: white;
+  background-color: #646cff;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
