@@ -1,0 +1,25 @@
+.payment__shoppingCart {
+  display: flex;
+  gap: 50px;
+}
+
+.payment__shopping-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.shopping__item-button {
+  height: 40px;
+  cursor: pointer;
+}
+
+.cart__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cart__actions > button {
+  height: 40px;
+}
