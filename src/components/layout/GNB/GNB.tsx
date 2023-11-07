@@ -10,9 +10,6 @@ export const GNB = () => {
         </NavLink>
       </div>
       <nav className="gnb__header-nav">
-        <NavLink to="/" className="header__nav-link" unstable_viewTransition>
-          Home
-        </NavLink>
         <NavLink
           to="/strategy"
           className="header__nav-link"
