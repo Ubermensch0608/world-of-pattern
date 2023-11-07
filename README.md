@@ -1,27 +1,12 @@
-# React + TypeScript + Vite
+# World of Pattern
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Strategy Pattern (전략 패턴)
 
-Currently, two official plugins are available:
+> 단계별로 실행되는 동일한 로직(행동)을
+> 여러 가지 구현을 통해 선택할 수 있게 하는 디자인 패턴
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**아니, 그것보다 전략 패턴에서 배울 수 있는 중요한 가르침은 따로 있다.**
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- 객체를 사물, 정적인 것으로만 나눌 수 있다고 생각하지 않는것이 핵심
+- 객체는 동작만을 가질 수도 있다
+- 동작을 따로 나누었을 때 그렇지 않았을 때보다 더 유연한 객체를 만들 수 있다
