@@ -17,6 +17,20 @@ export const GNB = () => {
         >
           Strategy
         </NavLink>
+        <NavLink
+          to="/playground"
+          className="header__nav-link"
+          unstable_viewTransition
+        >
+          Playground
+        </NavLink>
+        <NavLink
+          to="/command"
+          className="header__nav-link"
+          unstable_viewTransition
+        >
+          Command
+        </NavLink>
       </nav>
     </header>
   );
