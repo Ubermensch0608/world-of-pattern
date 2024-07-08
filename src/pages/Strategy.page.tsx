@@ -1,6 +1,7 @@
 import { BadRobotApp } from "../components/strategy/BadRobotApp";
 import { GoodRobotApp } from "../components/strategy/GoodRobotApp";
 import { Payment } from "../components/strategy/Payment";
+import { SortApp, SortApp2 } from "../components/strategy/sort/SortApp";
 
 const StrategyPage = () => {
   return (
@@ -9,6 +10,11 @@ const StrategyPage = () => {
       <BadRobotApp />
       <GoodRobotApp />
       <Payment />
+
+      <div>
+        <SortApp />
+        <SortApp2 />
+      </div>
     </main>
   );
 };

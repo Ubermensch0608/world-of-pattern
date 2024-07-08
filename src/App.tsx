@@ -5,6 +5,7 @@ import StrategyPage from "./pages/Strategy.page";
 import Layout from "./components/layout/Layout";
 import { PlaygroundPage } from "./pages/Playground.page";
 import { CommandPage } from "./pages/Command.page";
+import { StrategyVersusCommand } from "./pages/StrategyVersusCommand";
 
 const routes = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const routes = createBrowserRouter([
       {
         path: "command",
         element: <CommandPage />,
+      },
+      {
+        path: "command&strategy",
+        element: <StrategyVersusCommand />,
       },
     ],
   },
