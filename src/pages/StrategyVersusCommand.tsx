@@ -162,13 +162,17 @@ class FlyNoWay implements Flyable {
 
 class Duck {
   private _flyStrategy: Flyable;
+  private _flyStrategyLambda = () => {};
 
   get flyStrategy() {
     return this._flyStrategy;
   }
 
-  constructor(flyStrategy: Flyable) {
+  constructor(flyStrategy: Flyable, flyStrategyLambda?: () => void) {
     this._flyStrategy = flyStrategy;
+    if (flyStrategyLambda) {
+      this._flyStrategyLambda = flyStrategyLambda;
+    }
 
     makeObservable<this, "_flyStrategy">(this, {
       _flyStrategy: observable,
@@ -182,13 +186,20 @@ class Duck {
     this._flyStrategy = flyStrategy;
   }
 
+  setFlyStrategyWithLambda(flyStrategy: () => void) {
+    this._flyStrategyLambda = flyStrategy;
+  }
+
   fly() {
     this._flyStrategy.fly();
+    this._flyStrategyLambda();
   }
 }
 
 class StrategyService {
-  private _duck: Duck = new Duck(new FlyWithWings());
+  private _duck: Duck = new Duck(new FlyWithWings(), () =>
+    console.log("날개로 날기")
+  );
 
   get duck() {
     return this._duck;
@@ -196,6 +207,10 @@ class StrategyService {
 
   setFlyStrategy(flyStrategy: Flyable) {
     this._duck.setFlyStrategy(flyStrategy);
+  }
+
+  setFlyStrategyWithLambda(fn: () => void) {
+    this._duck.setFlyStrategyWithLambda(fn);
   }
 }
 
@@ -216,28 +231,40 @@ const StrategyModule = observer(() => {
 
       <button
         onClick={() => {
-          strategyService.setFlyStrategy(new FlyWithWings());
+          //   strategyService.setFlyStrategy(new FlyWithWings());
+          strategyService.setFlyStrategyWithLambda(() =>
+            console.log("날개로 날기")
+          );
         }}
       >
         날개로 날기
       </button>
       <button
         onClick={() => {
-          strategyService.setFlyStrategy(new FlyWithRocket());
+          //   strategyService.setFlyStrategy(new FlyWithRocket());
+          strategyService.setFlyStrategyWithLambda(() =>
+            console.log("로켓으로 날기")
+          );
         }}
       >
         로켓으로 날기
       </button>
       <button
         onClick={() => {
-          strategyService.setFlyStrategy(new FlyWithJet());
+          //   strategyService.setFlyStrategy(new FlyWithJet());
+          strategyService.setFlyStrategyWithLambda(() =>
+            console.log("제트기로 날기")
+          );
         }}
       >
         제트기로 날기
       </button>
       <button
         onClick={() => {
-          strategyService.setFlyStrategy(new FlyNoWay());
+          //   strategyService.setFlyStrategy(new FlyNoWay());
+          strategyService.setFlyStrategyWithLambda(() =>
+            console.log("날 수 없음")
+          );
         }}
       >
         날 수 없음
